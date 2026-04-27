@@ -1,14 +1,399 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dra. Pamela Meza - Odontología y Ortodoncia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#2f1500",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-surface-variant": "#434750",
+                        "tertiary-fixed": "#ffdcc3",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#1e4e8c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001f28",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "secondary-fixed-dim": "#60d4fb",
+                        "on-primary-fixed-variant": "#134684",
+                        "inverse-primary": "#a8c8ff",
+                        "secondary": "#56ccf2",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed-variant": "#004e61",
+                        "on-secondary-container": "#005c72",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#9dc1ff",
+                        "outline-variant": "#c3c6d2",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#793f00",
+                        "outline": "#737781",
+                        "tertiary": "#793f00",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#001b3d",
+                        "on-tertiary-container": "#ffae6b",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#325f9e",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1e4e8c",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "background": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#63d7fe",
+                        "secondary-fixed": "#b7eaff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-fixed-dim": "#ffb77e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        (() => {
+            const root = document.documentElement;
+            const storedTheme = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+                root.classList.add("dark");
+            } else {
+                root.classList.remove("dark");
+            }
+        })();
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .brand-icon {
+            width: 1rem;
+            height: 1rem;
+            fill: currentColor;
+        }
+
+        .service-icon {
+            width: 1.35rem;
+            height: 1.35rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1,8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .dark .text-primary {
+            color: #a8c8ff !important;
+        }
+
+        .dark .text-on-surface {
+            color: #f0f1f2 !important;
+        }
+
+        .dark .text-on-surface-variant {
+            color: #9fb0c3 !important;
+        }
+    </style>
 </head>
-<body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+<body class="bg-surface text-on-surface dark:bg-[#111418] dark:text-inverse-on-surface font-body antialiased selection:bg-primary selection:text-on-primary transition-colors duration-300">
+    <!-- TopNavBar (From JSON Anchor) -->
+    <nav class="docked full-width top-0 sticky z-50 bg-surface-container-low/95 dark:bg-[#151a20]/95 backdrop-blur border-b border-outline-variant/40 dark:border-white/10 font-manrope text-sm font-bold tracking-tight transition-colors duration-300">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-8xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-surface-container-high dark:bg-[#1e252d] border border-outline-variant/60 dark:border-white/15 flex items-center justify-center text-primary dark:text-primary-fixed-dim text-[10px] font-bold tracking-wider">
+                    <img src="Resources/Img/logo.png" alt="Foto del icono" class="w-full h-full object-contain">
+                </div>
+                <div class="text-xl font-bold tracking-tighter text-primary dark:text-primary-fixed-dim uppercase">
+                    Dra. Pamela Meza
+                </div>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#servicios">Servicios</a>
+                <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#convenios">Convenios</a>
+                <a class="text-slate-600 dark:text-slate-300 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#ubicacion">Ubicación</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <button aria-label="Cambiar tema" class="w-10 h-10 rounded-full bg-surface-container-high dark:bg-[#1e252d] text-primary dark:text-secondary flex items-center justify-center hover:scale-105 transition-transform" id="theme-toggle" type="button">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+                </button>
+                <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" class="md:hidden w-10 h-10 rounded-full bg-surface-container-high dark:bg-[#1e252d] text-primary dark:text-secondary flex items-center justify-center hover:scale-105 transition-transform" id="mobile-menu-toggle" type="button">
+                    <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+                </button>
+                <a class="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-label tracking-wider uppercase text-xs shadow-sm hover:opacity-90 transition-opacity" href="https://wa.me/5493751559525" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="brand-icon" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.01 0C3.689 0 .17 3.519.17 7.84c0 1.379.36 2.727 1.04 3.918L0 16l4.328-1.134a7.831 7.831 0 0 0 3.674.933h.003c4.32 0 7.839-3.519 7.839-7.84a7.83 7.83 0 0 0-2.243-5.633m-5.595 12.13h-.003a6.53 6.53 0 0 1-3.329-.913l-.239-.142-2.569.674.686-2.503-.156-.256a6.5 6.5 0 0 1-.999-3.46c.001-3.584 2.917-6.5 6.503-6.5 1.74 0 3.373.678 4.602 1.907a6.46 6.46 0 0 1 1.9 4.606c-.002 3.584-2.918 6.5-6.502 6.5m3.56-4.82c-.195-.098-1.154-.57-1.333-.635s-.309-.098-.44.098-.505.634-.619.766-.227.147-.422.05c-.195-.098-.823-.303-1.568-.967-.58-.517-.972-1.156-1.086-1.351s-.012-.3.086-.397c.087-.086.195-.227.293-.342.098-.114.13-.195.195-.325.065-.13.033-.244-.016-.342s-.44-1.06-.603-1.454c-.159-.381-.32-.329-.44-.335l-.375-.007a.72.72 0 0 0-.521.244c-.179.195-.684.668-.684 1.628s.7 1.887.798 2.017c.098.13 1.38 2.107 3.344 2.954.467.202.832.323 1.117.413.469.149.896.128 1.233.077.376-.056 1.154-.471 1.317-.926.163-.455.163-.846.114-.927-.049-.081-.179-.13-.374-.228" /></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="hidden md:hidden border-t border-outline-variant/40 dark:border-white/10" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col gap-3 bg-surface-container-low/95 dark:bg-[#151a20]/95">
+                <a class="text-slate-700 dark:text-slate-200 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#servicios">Servicios</a>
+                <a class="text-slate-700 dark:text-slate-200 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#convenios">Convenios</a>
+                <a class="text-slate-700 dark:text-slate-200 font-medium hover:text-secondary dark:hover:text-secondary transition-colors duration-300" href="#ubicacion">Ubicación</a>
+                <a class="mt-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-label tracking-wider uppercase text-xs shadow-sm hover:opacity-90 transition-opacity" href="https://wa.me/5493751559525" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="brand-icon" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.01 0C3.689 0 .17 3.519.17 7.84c0 1.379.36 2.727 1.04 3.918L0 16l4.328-1.134a7.831 7.831 0 0 0 3.674.933h.003c4.32 0 7.839-3.519 7.839-7.84a7.83 7.83 0 0 0-2.243-5.633m-5.595 12.13h-.003a6.53 6.53 0 0 1-3.329-.913l-.239-.142-2.569.674.686-2.503-.156-.256a6.5 6.5 0 0 1-.999-3.46c.001-3.584 2.917-6.5 6.503-6.5 1.74 0 3.373.678 4.602 1.907a6.46 6.46 0 0 1 1.9 4.606c-.002 3.584-2.918 6.5-6.502 6.5m3.56-4.82c-.195-.098-1.154-.57-1.333-.635s-.309-.098-.44.098-.505.634-.619.766-.227.147-.422.05c-.195-.098-.823-.303-1.568-.967-.58-.517-.972-1.156-1.086-1.351s-.012-.3.086-.397c.087-.086.195-.227.293-.342.098-.114.13-.195.195-.325.065-.13.033-.244-.016-.342s-.44-1.06-.603-1.454c-.159-.381-.32-.329-.44-.335l-.375-.007a.72.72 0 0 0-.521.244c-.179.195-.684.668-.684 1.628s.7 1.887.798 2.017c.098.13 1.38 2.107 3.344 2.954.467.202.832.323 1.117.413.469.149.896.128 1.233.077.376-.056 1.154-.471 1.317-.926.163-.455.163-.846.114-.927-.049-.081-.179-.13-.374-.228" /></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[819px] flex items-center pt-16 pb-24 overflow-hidden transition-colors duration-300">
+            <!-- Asymmetrical Background Element -->
+            <div class="absolute top-0 right-0 w-2/3 h-full bg-surface-container-lowest dark:bg-[#1a2129] rounded-bl-[100px] -z-10 shadow-[0_0_40px_rgba(25,28,29,0.02)]"></div>
+            <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="pr-0 lg:pr-12">
+                    <h1 class="font-headline text-5xl lg:text-6xl text-primary font-extrabold tracking-tight leading-[1.1] mb-6">
+                        Tu sonrisa en las mejores manos
+                    </h1>
+                    <p class="font-body text-xl text-on-surface-variant mb-10 leading-relaxed">
+                        Especialistas en Odontología y Ortodoncia en Eldorado. Un enfoque clínico artesanal para tu salud bucal.
+                    </p>
+                    <a class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-label font-bold uppercase tracking-wider text-sm hover:shadow-[0_8px_24px_-8px_rgba(0,55,111,0.5)] transition-all transform hover:-translate-y-0.5" href="https://wa.me/5493751559525" target="_blank" rel="noopener noreferrer">
+                        <svg aria-hidden="true" class="brand-icon" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.01 0C3.689 0 .17 3.519.17 7.84c0 1.379.36 2.727 1.04 3.918L0 16l4.328-1.134a7.831 7.831 0 0 0 3.674.933h.003c4.32 0 7.839-3.519 7.839-7.84a7.83 7.83 0 0 0-2.243-5.633m-5.595 12.13h-.003a6.53 6.53 0 0 1-3.329-.913l-.239-.142-2.569.674.686-2.503-.156-.256a6.5 6.5 0 0 1-.999-3.46c.001-3.584 2.917-6.5 6.503-6.5 1.74 0 3.373.678 4.602 1.907a6.46 6.46 0 0 1 1.9 4.606c-.002 3.584-2.918 6.5-6.502 6.5m3.56-4.82c-.195-.098-1.154-.57-1.333-.635s-.309-.098-.44.098-.505.634-.619.766-.227.147-.422.05c-.195-.098-.823-.303-1.568-.967-.58-.517-.972-1.156-1.086-1.351s-.012-.3.086-.397c.087-.086.195-.227.293-.342.098-.114.13-.195.195-.325.065-.13.033-.244-.016-.342s-.44-1.06-.603-1.454c-.159-.381-.32-.329-.44-.335l-.375-.007a.72.72 0 0 0-.521.244c-.179.195-.684.668-.684 1.628s.7 1.887.798 2.017c.098.13 1.38 2.107 3.344 2.954.467.202.832.323 1.117.413.469.149.896.128 1.233.077.376-.056 1.154-.471 1.317-.926.163-.455.163-.846.114-.927-.049-.081-.179-.13-.374-.228" /></svg>
+                        Pedir Turno por WhatsApp
+                    </a>
+                </div>
+                <div class="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-[0_12px_48px_-12px_rgba(25,28,29,0.1)] group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10"></div>
+                    <img alt="Clínica Dental" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end modern dental clinic interior, bright natural light, state-of-the-art white dental chair, sterile clean environment, architectural photography" src="Resources/Img/frenteconsultorio.png">
+                </div>
+            </div>
+        </section>
+        <section class="py-24 bg-surface-container-low dark:bg-[#12181f] transition-colors duration-300" id="servicios">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-16">
+                    <span class="font-label text-secondary font-bold uppercase tracking-widest text-xs mb-3 block">Nuestra Especialidad</span>
+                    <h2 class="font-headline text-4xl text-primary font-extrabold tracking-tight">Servicios Clínicos</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="bg-surface-container-lowest dark:bg-[#1d252e] rounded-xl lg:col-span-2 overflow-hidden group hover:shadow-[0_12px_32px_-12px_rgba(25,28,29,0.06)] transition-all duration-300">
+                        <img src="Resources/Img/odontologia.png" alt="Odontología General" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h3 class="font-headline text-2xl text-primary font-bold mb-4">Odontología General</h3>
+                            <p class="font-body text-on-surface-variant leading-relaxed">
+                                Controles periódicos, limpiezas profundas y prevención para mantener una salud bucal óptima.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-surface-container-lowest dark:bg-[#1d252e] rounded-xl overflow-hidden group hover:shadow-[0_12px_32px_-12px_rgba(25,28,29,0.06)] transition-all duration-300">
+                        <img src="Resources/Img/ortodoncia.png" alt="Ortodoncia" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h3 class="font-headline text-2xl text-primary font-bold mb-4">Ortodoncia</h3>
+                            <p class="font-body text-on-surface-variant leading-relaxed">
+                                Alineación y corrección de la mordida para una sonrisa funcional y estética.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-surface-container-lowest dark:bg-[#1d252e] rounded-xl overflow-hidden group hover:shadow-[0_12px_32px_-12px_rgba(25,28,29,0.06)] transition-all duration-300">
+                        <img src="Resources/Img/protesis.png" alt="Prótesis" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h3 class="font-headline text-2xl text-primary font-bold mb-4">Prótesis</h3>
+                            <p class="font-body text-on-surface-variant leading-relaxed">
+                                Restauración dental personalizada para recuperar la funcionalidad de tu boca.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-surface-container-lowest dark:bg-[#1d252e] rounded-xl lg:col-span-2 overflow-hidden group hover:shadow-[0_12px_32px_-12px_rgba(25,28,29,0.06)] transition-all duration-300">
+                        <img src="Resources/Img/cirugiamuelasdeljuicio.png" alt="Cirugía de Muelas del Juicio" class="w-full h-48 object-cover">
+                        <div class="p-8">
+                            <h3 class="font-headline text-2xl text-primary font-bold mb-4">Cirugía de Muelas del Juicio</h3>
+                            <p class="font-body text-on-surface-variant leading-relaxed">
+                                Extracciones complejas realizadas con precisión clínica y máximo confort para el paciente.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Insurance (Convenios) Section -->
+        <section class="relative py-24 bg-surface dark:bg-[#111418] overflow-hidden transition-colors duration-300" id="convenios">
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="Resources/Img/backgroundobrassociales.png" alt="" class="w-full h-full object-cover opacity-35 dark:opacity-20 dark:grayscale blur-[1px] dark:blur-sm">
+                <div class="absolute inset-0 bg-gradient-to-b from-surface/72 via-surface/28 to-surface/72 dark:from-[#111418] dark:via-transparent dark:to-[#111418]"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+                <div class="mb-16">
+                    <h2 class="font-headline text-3xl text-primary font-extrabold tracking-tight mb-4">Obras Sociales</h2>
+                    <p class="font-body text-on-surface-variant max-w-2xl mx-auto">Trabajamos con una amplia red de coberturas médicas para tu tranquilidad.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">IPS</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Camionero</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">OSECAC</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">OSDE</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Asis Salud</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Meld Salud</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Sancor Salud</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">OSPES</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Mediter</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Galeno</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">América Servicio</span>
+                    </div>
+                    <div class="bg-white/80 dark:bg-[#1d252e]/80 backdrop-blur-sm border border-outline-variant/60 dark:border-white/5 py-6 px-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-white dark:hover:bg-[#1d252e] hover:border-outline dark:hover:border-white/10 group cursor-default">
+                        <span class="font-headline text-lg text-on-surface dark:text-slate-200 group-hover:text-primary dark:group-hover:text-white transition-colors">Farmacia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Location & Contact -->
+        <section class="py-24 bg-surface-container-low dark:bg-[#12181f] transition-colors duration-300" id="ubicacion">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="font-label text-secondary font-bold uppercase tracking-widest text-xs mb-3 block">Contacto</span>
+                        <h2 class="font-headline text-4xl text-primary font-extrabold tracking-tight mb-8">Ubicación y Horarios</h2>
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-secondary mt-1" data-icon="location_on">location_on</span>
+                                <div>
+                                    <p class="font-body font-bold text-on-surface">Dirección</p>
+                                    <p class="font-body text-on-surface-variant">Av. Paraguay 4005, Eldorado</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-secondary mt-1" data-icon="call">call</span>
+                                <div>
+                                    <p class="font-body font-bold text-on-surface">Teléfono</p>
+                                    <a class="font-body text-on-surface-variant" href="tel:+5493751559525" target="_blank">3751-559525</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="material-symbols-outlined text-secondary mt-1" data-icon="schedule">schedule</span>
+                                <div>
+                                    <p class="font-body font-bold text-on-surface">Horarios</p>
+                                    <p class="font-body text-on-surface-variant">Lunes a Viernes: 07:00 a 11:00 y 15:00 a 19:00.<br>Sábado y Domingo: Cerrado.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-label font-bold uppercase tracking-wider text-sm hover:shadow-lg transition-all" href="https://wa.me/5493751559525">
+                            <svg aria-hidden="true" class="brand-icon" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.01 0C3.689 0 .17 3.519.17 7.84c0 1.379.36 2.727 1.04 3.918L0 16l4.328-1.134a7.831 7.831 0 0 0 3.674.933h.003c4.32 0 7.839-3.519 7.839-7.84a7.83 7.83 0 0 0-2.243-5.633m-5.595 12.13h-.003a6.53 6.53 0 0 1-3.329-.913l-.239-.142-2.569.674.686-2.503-.156-.256a6.5 6.5 0 0 1-.999-3.46c.001-3.584 2.917-6.5 6.503-6.5 1.74 0 3.373.678 4.602 1.907a6.46 6.46 0 0 1 1.9 4.606c-.002 3.584-2.918 6.5-6.502 6.5m3.56-4.82c-.195-.098-1.154-.57-1.333-.635s-.309-.098-.44.098-.505.634-.619.766-.227.147-.422.05c-.195-.098-.823-.303-1.568-.967-.58-.517-.972-1.156-1.086-1.351s-.012-.3.086-.397c.087-.086.195-.227.293-.342.098-.114.13-.195.195-.325.065-.13.033-.244-.016-.342s-.44-1.06-.603-1.454c-.159-.381-.32-.329-.44-.335l-.375-.007a.72.72 0 0 0-.521.244c-.179.195-.684.668-.684 1.628s.7 1.887.798 2.017c.098.13 1.38 2.107 3.344 2.954.467.202.832.323 1.117.413.469.149.896.128 1.233.077.376-.056 1.154-.471 1.317-.926.163-.455.163-.846.114-.927-.049-.081-.179-.13-.374-.228" /></svg>
+                            Contactar por WhatsApp
+                        </a>
+                    </div>
+                    <div class="h-[400px] w-full bg-surface-container-highest dark:bg-[#1d252e] rounded-2xl overflow-hidden shadow-inner relative">
+                        <!-- Map Placeholder -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-surface-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d446.05639166742344!2d-54.76017835484646!3d-26.569895025418834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f7786e5de1f0f5%3A0x2b18768296ecb4d8!2sAv.%20Paraguay%2C%20N3384%20Montecarlo%2C%20Misiones!5e0!3m2!1ses-419!2sar!4v1777241950111!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer (From JSON Anchor) -->
+    <footer class="bg-[#f3f4f5] dark:bg-[#0f1318] text-primary dark:text-primary-fixed-dim font-inter text-xs leading-relaxed full-width border-t border-outline-variant/40 dark:border-white/10 transition-colors duration-300">
+        <div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-8xl mx-auto">
+            <div class="font-manrope font-black text-primary dark:text-primary-fixed-dim text-lg">
+                Dra. Pamela Meza
+            </div>
+            <div class="text-slate-500 dark:text-slate-400 text-center">
+                © 2026 Dra. Pamela Meza - Odontología y Ortodoncia. Av. Paraguay 4005. Tel: 3751-559525
+            </div>
+            <div class="flex gap-4">
+                <a class="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-opacity opacity-80 hover:opacity-100 transition-all font-medium" href="#" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="brand-icon" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" /></svg>
+                    Facebook
+                </a>
+                <a class="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-opacity opacity-80 hover:opacity-100 transition-all font-medium" href="https://www.instagram.com/dra_pamela_meza/" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="brand-icon" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115.1 51.5-115.1 115.1s51.5 115.1 115.1 115.1S339.2 319.7 339.2 256 287.7 141 224.1 141m0 190.4c-41.6 0-75.3-33.7-75.3-75.3s33.7-75.3 75.3-75.3 75.3 33.7 75.3 75.3-33.7 75.3-75.3 75.3m146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9m76.1 27.3c-1.7-35.3-9.7-66.7-35.5-92.4S354.3 1.7 319 0C283.2-1.9 164.9-1.9 129.1 0 93.8 1.7 62.4 9.7 36.7 35.5S1.9 93.8.2 129.1c-1.9 35.8-1.9 154.1 0 189.9 1.7 35.3 9.7 66.7 35.5 92.4s57.1 33.7 92.4 35.5c35.8 1.9 154.1 1.9 189.9 0 35.3-1.7 66.7-9.7 92.4-35.5s33.7-57.1 35.5-92.4c1.9-35.8 1.9-154.1 0-189.9M398.8 388c-7.7 19.3-22.6 34.2-41.9 41.9-29 11.5-97.8 8.8-132.8 8.8s-103.9 2.7-132.8-8.8c-19.3-7.7-34.2-22.6-41.9-41.9-11.5-29-8.8-97.8-8.8-132.8s-2.7-103.9 8.8-132.8c7.7-19.3 22.6-34.2 41.9-41.9 29-11.5 97.8-8.8 132.8-8.8s103.9-2.7 132.8 8.8c19.3 7.7 34.2 22.6 41.9 41.9 11.5 29 8.8 97.8 8.8 132.8s2.7 103.9-8.8 132.8" /></svg>
+                    Instagram
+                </a>
+                <a class="inline-flex items-center gap-1.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-opacity opacity-80 hover:opacity-100 transition-all font-medium" href="https://wa.me/5493751559525" target="_blank" rel="noopener noreferrer">
+                    <svg aria-hidden="true" class="brand-icon" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.01 0C3.689 0 .17 3.519.17 7.84c0 1.379.36 2.727 1.04 3.918L0 16l4.328-1.134a7.831 7.831 0 0 0 3.674.933h.003c4.32 0 7.839-3.519 7.839-7.84a7.83 7.83 0 0 0-2.243-5.633m-5.595 12.13h-.003a6.53 6.53 0 0 1-3.329-.913l-.239-.142-2.569.674.686-2.503-.156-.256a6.5 6.5 0 0 1-.999-3.46c.001-3.584 2.917-6.5 6.503-6.5 1.74 0 3.373.678 4.602 1.907a6.46 6.46 0 0 1 1.9 4.606c-.002 3.584-2.918 6.5-6.502 6.5m3.56-4.82c-.195-.098-1.154-.57-1.333-.635s-.309-.098-.44.098-.505.634-.619.766-.227.147-.422.05c-.195-.098-.823-.303-1.568-.967-.58-.517-.972-1.156-1.086-1.351s-.012-.3.086-.397c.087-.086.195-.227.293-.342.098-.114.13-.195.195-.325.065-.13.033-.244-.016-.342s-.44-1.06-.603-1.454c-.159-.381-.32-.329-.44-.335l-.375-.007a.72.72 0 0 0-.521.244c-.179.195-.684.668-.684 1.628s.7 1.887.798 2.017c.098.13 1.38 2.107 3.344 2.954.467.202.832.323 1.117.413.469.149.896.128 1.233.077.376-.056 1.154-.471 1.317-.926.163-.455.163-.846.114-.927-.049-.081-.179-.13-.374-.228" /></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const themeToggleButton = document.getElementById("theme-toggle");
+        const mobileMenuToggleButton = document.getElementById("mobile-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+
+        if (themeToggleButton) {
+            themeToggleButton.addEventListener("click", () => {
+                const root = document.documentElement;
+                root.classList.toggle("dark");
+                localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+            });
+        }
+
+        if (mobileMenuToggleButton && mobileMenu && mobileMenuIcon) {
+            mobileMenuToggleButton.addEventListener("click", () => {
+                const isOpen = !mobileMenu.classList.contains("hidden");
+                mobileMenu.classList.toggle("hidden");
+                mobileMenuToggleButton.setAttribute("aria-expanded", String(!isOpen));
+                mobileMenuIcon.textContent = isOpen ? "menu" : "close";
+            });
+
+            mobileMenu.querySelectorAll("a[href^='#']").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuToggleButton.setAttribute("aria-expanded", "false");
+                    mobileMenuIcon.textContent = "menu";
+                });
+            });
+        }
+    </script>
 </body>
 </html>
