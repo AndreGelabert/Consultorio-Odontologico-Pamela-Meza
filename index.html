@@ -3,7 +3,88 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Dra. Pamela Meza - Odontología y Ortodoncia</title>
+    <title>Consultorio Odontológico en Montecarlo | Dra. Pamela Meza</title>
+    <meta name="description" content="Consultorio odontológico en Montecarlo, Misiones. Dra. Pamela Meza: odontología general, ortodoncia, prótesis y cirugía de muelas del juicio. Turnos por WhatsApp.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://consultorioodontologicopamelameza.com.ar/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Consultorio Odontológico Pamela Meza">
+    <meta property="og:title" content="Consultorio Odontológico en Montecarlo | Dra. Pamela Meza">
+    <meta property="og:description" content="Atención odontológica en Montecarlo, Misiones. Odontología general, ortodoncia, prótesis y cirugía de muelas del juicio.">
+    <meta property="og:url" content="https://consultorioodontologicopamelameza.com.ar/">
+    <meta property="og:image" content="https://consultorioodontologicopamelameza.com.ar/Resources/Img/frenteConsultorioHorizontal.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Consultorio Odontológico en Montecarlo | Dra. Pamela Meza">
+    <meta name="twitter:description" content="Atención odontológica en Montecarlo, Misiones. Turnos por WhatsApp.">
+    <meta name="twitter:image" content="https://consultorioodontologicopamelameza.com.ar/Resources/Img/frenteConsultorioHorizontal.jpeg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "name": "Consultorio Odontológico Dra. Pamela Meza",
+            "url": "https://consultorioodontologicopamelameza.com.ar/",
+            "image": "https://consultorioodontologicopamelameza.com.ar/Resources/Img/frenteConsultorioHorizontal.jpeg",
+            "telephone": "+5493751559525",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Paraguay 4005",
+                "addressLocality": "Montecarlo",
+                "addressRegion": "Misiones",
+                "addressCountry": "AR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -26.569895,
+                "longitude": -54.760178
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Montecarlo"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "opens": "07:00",
+                    "closes": "11:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Thursday",
+                        "Friday"
+                    ],
+                    "opens": "15:00",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "07:00",
+                    "closes": "11:00"
+                }
+            ],
+            "sameAs": [
+                "https://www.instagram.com/dra_pamela_meza/"
+            ]
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -339,7 +420,7 @@
                         <div class="absolute inset-0 flex items-center justify-center bg-surface-container">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d446.05639166742344!2d-54.76017835484646!3d-26.569895025418834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f7786e5de1f0f5%3A0x2b18768296ecb4d8!2sAv.%20Paraguay%2C%20N3384%20Montecarlo%2C%20Misiones!5e0!3m2!1ses-419!2sar!4v1777241950111!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                    </div>/
+                    </div>
                 </div>
             </div>
         </section>
@@ -399,6 +480,22 @@
                 });
             });
         }
+
+        const trackClick = (eventName, element) => {
+            if (typeof window.gtag !== "function") return;
+            gtag("event", eventName, {
+                event_category: "engagement",
+                event_label: element.getAttribute("href") || "unknown_link"
+            });
+        };
+
+        document.querySelectorAll('a[href^="https://wa.me/"], a[href^="http://wa.me/"]').forEach((link) => {
+            link.addEventListener("click", () => trackClick("whatsapp_click", link));
+        });
+
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+            link.addEventListener("click", () => trackClick("phone_click", link));
+        });
     </script>
 </body>
 </html>
